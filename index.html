@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pakala Sreevathsava Reddy — Data Science Analyst</title>
+<title>Pakala Sreevathsava Reddy — Data Science</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
@@ -19,7 +19,6 @@
   html { scroll-behavior: smooth; }
   body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--white); color: var(--navy); line-height: 1.6; }
 
-  /* NAV */
   nav {
     position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95);
     backdrop-filter: blur(8px); border-bottom: 1px solid var(--border);
@@ -31,26 +30,17 @@
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { text-decoration: none; color: var(--gray); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
   .nav-links a:hover { color: var(--accent); }
-  .nav-cta {
-    background: var(--accent); color: #fff; border: none; padding: 0.5rem 1.2rem;
-    border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: background 0.2s;
-  }
+  .nav-cta { background: var(--accent); color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: background 0.2s; }
   .nav-cta:hover { background: var(--slate); }
 
-  /* HERO */
   .hero {
     min-height: 100vh; display: flex; align-items: center; justify-content: center;
     background: linear-gradient(135deg, #f5f7fa 0%, #e8eef7 100%);
     padding: 6rem 2rem 4rem; text-align: center;
   }
   .hero-inner { max-width: 760px; }
-  .hero-badge {
-    display: inline-block; background: rgba(79,126,196,0.12); color: var(--accent);
-    padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;
-    margin-bottom: 1.5rem; letter-spacing: 0.5px;
-  }
-  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 0.5rem; letter-spacing: -1px; }
-  .hero h1 span { color: var(--accent); }
+  .hero-badge { display: inline-block; background: rgba(79,126,196,0.12); color: var(--accent); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; letter-spacing: 0.5px; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 0.5rem; letter-spacing: -1px; color: var(--navy); }
   .hero-role { font-size: 1.1rem; font-weight: 600; color: var(--slate); margin-bottom: 0.75rem; }
   .hero p { font-size: 1rem; color: var(--gray); max-width: 580px; margin: 0 auto 2rem; }
   .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2.5rem; }
@@ -64,7 +54,6 @@
   .scroll-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin: 0.5rem auto 0; animation: bounce 1.5s infinite; }
   @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
 
-  /* SECTIONS */
   section { padding: 5rem 2rem; }
   .container { max-width: 1000px; margin: 0 auto; }
   .section-label { font-size: 0.8rem; font-weight: 700; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; }
@@ -72,7 +61,6 @@
   .section-sub { color: var(--gray); font-size: 1rem; margin-bottom: 3rem; max-width: 540px; }
   .divider { width: 48px; height: 3px; background: var(--accent); border-radius: 2px; margin-bottom: 1.5rem; }
 
-  /* ABOUT */
   #about { background: var(--white); }
   .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: center; }
   .avatar { width: 200px; height: 200px; border-radius: 16px; background: linear-gradient(135deg, var(--accent), var(--navy)); display: flex; align-items: center; justify-content: center; font-size: 4.5rem; margin: 0 auto; }
@@ -82,7 +70,6 @@
   .stat strong { display: block; font-size: 1.8rem; font-weight: 800; color: var(--accent); }
   .stat span { font-size: 0.8rem; color: var(--gray); }
 
-  /* SKILLS */
   #skills { background: var(--light); }
   .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
   .skill-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s; }
@@ -91,19 +78,27 @@
   .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .tag { background: rgba(79,126,196,0.1); color: var(--slate); font-size: 0.8rem; padding: 0.3rem 0.75rem; border-radius: 20px; font-weight: 500; }
 
-  /* EXPERIENCE */
+  /* EXPERIENCE TIMELINE */
   #experience { background: var(--white); }
-  .exp-card { border: 1px solid var(--border); border-radius: 16px; padding: 2rem; box-shadow: var(--shadow); position: relative; overflow: hidden; }
-  .exp-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent); }
-  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
-  .exp-header h3 { font-size: 1.15rem; font-weight: 700; }
-  .exp-header .company { color: var(--accent); font-weight: 600; font-size: 0.95rem; }
-  .exp-header .period { font-size: 0.82rem; color: var(--gray); background: var(--light); padding: 0.3rem 0.8rem; border-radius: 20px; font-weight: 500; }
-  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-  .exp-bullets li { display: flex; gap: 0.75rem; font-size: 0.93rem; color: var(--gray); }
-  .exp-bullets li::before { content: '▸'; color: var(--accent); flex-shrink: 0; font-size: 0.85rem; margin-top: 2px; }
+  .timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
+  .timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+  .company-block { margin-bottom: 2rem; }
+  .company-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; position: relative; z-index: 1; }
+  .company-dot { width: 42px; height: 42px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; border: 3px solid var(--white); box-shadow: 0 0 0 2px var(--accent); }
+  .company-name { font-size: 1.1rem; font-weight: 800; color: var(--navy); }
+  .company-tenure { font-size: 0.8rem; color: var(--gray); font-weight: 500; }
+  .roles { margin-left: 58px; display: flex; flex-direction: column; gap: 1rem; }
+  .role-card { background: var(--light); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; position: relative; }
+  .role-card.current { border-left: 4px solid var(--accent); background: rgba(79,126,196,0.04); }
+  .role-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+  .role-title { font-size: 1rem; font-weight: 700; color: var(--navy); }
+  .role-badge { font-size: 0.75rem; color: #fff; background: var(--accent); padding: 0.2rem 0.7rem; border-radius: 20px; font-weight: 600; white-space: nowrap; }
+  .role-badge.prev { background: var(--gray); }
+  .role-period { font-size: 0.8rem; color: var(--gray); margin-bottom: 0.75rem; }
+  .role-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .role-bullets li { display: flex; gap: 0.75rem; font-size: 0.9rem; color: var(--gray); }
+  .role-bullets li::before { content: '▸'; color: var(--accent); flex-shrink: 0; font-size: 0.8rem; margin-top: 3px; }
 
-  /* PROJECTS */
   #projects { background: var(--light); }
   .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
   .project-card { border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); background: var(--white); transition: transform 0.2s, box-shadow 0.2s; }
@@ -115,9 +110,8 @@
   .project-highlight { background: rgba(79,126,196,0.08); border-left: 3px solid var(--accent); padding: 0.5rem 0.75rem; border-radius: 0 6px 6px 0; font-size: 0.83rem; color: var(--slate); font-weight: 600; margin-bottom: 1rem; }
   .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
-  /* EDUCATION & ACHIEVEMENTS */
   #education { background: var(--white); }
-  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
   .edu-card { border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow); }
   .edu-card .badge { font-size: 2rem; margin-bottom: 0.75rem; }
   .edu-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
@@ -130,7 +124,6 @@
   .ach-item p { font-size: 0.9rem; color: var(--gray); }
   .ach-item strong { color: var(--navy); }
 
-  /* CONTACT */
   #contact { background: var(--light); }
   .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: start; }
   .contact-info p { color: var(--gray); margin-bottom: 1.5rem; font-size: 0.95rem; }
@@ -155,12 +148,12 @@
     .nav-links { display: none; }
     .about-stats { justify-content: center; }
     .about-grid { text-align: center; }
+    .roles { margin-left: 40px; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo">PSR<span>.</span></div>
   <ul class="nav-links">
@@ -171,16 +164,15 @@
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Hire Me</a>
+  <a href="#contact" class="nav-cta">Get In Touch</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-badge">🟢 Open to Opportunities</div>
-    <h1>Pakala <span>Sreevathsava</span> Reddy</h1>
-    <div class="hero-role">Data Science Analyst · IIT Bhubaneswar Alumnus</div>
-    <p>Building and scaling production ML solutions in banking & financial services — from time-series forecasting to LLM evaluation pipelines.</p>
+    <h1>Pakala Sreevathsava Reddy</h1>
+    <div class="hero-role">AI/ML Senior Associate · Data Science Analyst · IIT Bhubaneswar CSE '24</div>
+    <p>Building production ML solutions across Banking and Pharma — from campaign analytics and time-series forecasting to LLM fine-tuning and clinical data pipelines.</p>
     <div class="hero-tags">
       <span class="hero-tag">Python</span>
       <span class="hero-tag">SQL</span>
@@ -188,6 +180,7 @@
       <span class="hero-tag">MLOps</span>
       <span class="hero-tag">NLP / LLMs</span>
       <span class="hero-tag">Time-Series</span>
+      <span class="hero-tag">Marketing Analytics</span>
     </div>
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">View My Work</a>
@@ -197,7 +190,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="container">
     <div class="about-grid">
@@ -206,8 +198,8 @@
         <div class="section-label">About Me</div>
         <h2 class="section-title">Turning data into decisions</h2>
         <div class="divider"></div>
-        <p>I'm a Data Science Analyst at Tiger Analytics with 1.5+ years of hands-on experience building end-to-end ML pipelines in the banking and financial services domain. I thrive at the intersection of rigorous modeling and production reliability.</p>
-        <p>My work spans time-series forecasting, MLOps, and GenAI/LLM evaluation. I'm passionate about writing clean, maintainable code and collaborating with global stakeholders to deliver real business impact from data.</p>
+        <p>I'm a Data Science Analyst at Tiger Analytics working across Banking and Pharma domains. My work spans SQL-driven analytics, classical machine learning, and building reusable Python data pipelines.</p>
+        <p>In Banking, I support campaign analytics by tracking CTR, open rates, deliveries, and overlap analysis. In Pharma, I build modular pipelines for clinical trial data ingestion, cleaning, analysis, and visualization — including supervised fine-tuning of LLaMA (LoRA-based) for therapeutic area classification from clinical text.</p>
         <div class="about-stats">
           <div class="stat"><strong>1.5+</strong><span>Years Exp.</span></div>
           <div class="stat"><strong>10+</strong><span>ML Pipelines</span></div>
@@ -219,7 +211,6 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="container">
     <div class="section-label">What I Know</div>
@@ -237,7 +228,7 @@
         <h3>🤖 Machine Learning</h3>
         <div class="skill-tags">
           <span class="tag">Time-Series Modeling</span><span class="tag">Classification</span><span class="tag">Feature Engineering</span>
-          <span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Model Evaluation</span>
+          <span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">PyTorch</span>
         </div>
       </div>
       <div class="skill-card">
@@ -250,48 +241,129 @@
       <div class="skill-card">
         <h3>🧠 GenAI / NLP</h3>
         <div class="skill-tags">
-          <span class="tag">Hugging Face</span><span class="tag">LangGraph</span><span class="tag">LLM Pipelines</span>
+          <span class="tag">Hugging Face</span><span class="tag">LangGraph</span><span class="tag">LLaMA Fine-tuning</span>
           <span class="tag">LoRA / PEFT</span><span class="tag">Text Classification</span>
         </div>
       </div>
       <div class="skill-card">
-        <h3>📈 Finance & Analytics</h3>
+        <h3>📈 Analytics & Finance</h3>
         <div class="skill-tags">
-          <span class="tag">Portfolio Optimization</span><span class="tag">Scenario Analysis</span>
-          <span class="tag">Credit Risk</span><span class="tag">Forecasting</span>
+          <span class="tag">Marketing Analytics</span><span class="tag">Campaign Analytics</span>
+          <span class="tag">Time Series Forecasting</span><span class="tag">Credit Risk</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <div class="container">
     <div class="section-label">Where I've Worked</div>
     <h2 class="section-title">Experience</h2>
     <div class="divider"></div>
-    <div class="exp-card">
-      <div class="exp-header">
-        <div>
-          <h3>Data Science Analyst</h3>
-          <div class="company">Tiger Analytics · Chennai, India</div>
+    <div class="timeline">
+
+      <!-- Tiger Analytics -->
+      <div class="company-block">
+        <div class="company-header">
+          <div class="company-dot">🐯</div>
+          <div>
+            <div class="company-name">Tiger Analytics</div>
+            <div class="company-tenure">1 year 7 months · Chennai, Tamil Nadu, India</div>
+          </div>
         </div>
-        <div class="period">July 2024 – Present</div>
+        <div class="roles">
+
+          <!-- Current Role -->
+          <div class="role-card current">
+            <div class="role-header">
+              <div>
+                <div class="role-title">AI/ML Senior Associate (Snr Data Science Analyst)</div>
+              </div>
+              <span class="role-badge">Current</span>
+            </div>
+            <div class="role-period">📅 April 2025 – Present · Chennai, Tamil Nadu</div>
+            <ul class="role-bullets">
+              <li>Conducted extensive exploratory data analysis (EDA) on banking campaign data to evaluate customer response and campaign ROI.</li>
+              <li>Developed visual dashboards and summary reports to guide marketing teams in optimizing outreach strategies.</li>
+              <li>Built and deployed café × channel-level sales forecasting models using ARIMA, SARIMAX, Prophet, and OLS.</li>
+              <li>Designed and evaluated regression models, resolving execution issues with actionable insights.</li>
+            </ul>
+          </div>
+
+          <!-- Previous Role -->
+          <div class="role-card">
+            <div class="role-header">
+              <div>
+                <div class="role-title">Analyst – Data Science</div>
+              </div>
+              <span class="role-badge prev">Aug 2024 – Apr 2025</span>
+            </div>
+            <div class="role-period">📅 9 months · Chennai</div>
+            <ul class="role-bullets">
+              <li>Owned and supported end-to-end production ML pipelines across 10+ heterogeneous datasets, ensuring data quality and pipeline stability.</li>
+              <li>Designed modular, config-driven Python frameworks to improve maintainability and testing, reducing production issues.</li>
+              <li>Supported deployment and evaluation of fine-tuned LLM models, tracking performance metrics and iterating based on accuracy degradation.</li>
+              <li>Monitored model performance metrics (F1, accuracy, drift indicators) and identified root causes for performance drops.</li>
+              <li>Worked on classification, recommendation, and NLP projects using scikit-learn and PyTorch.</li>
+            </ul>
+          </div>
+
+          <!-- Trainee Role -->
+          <div class="role-card">
+            <div class="role-header">
+              <div>
+                <div class="role-title">Data Science Trainee</div>
+              </div>
+              <span class="role-badge prev">Aug 2024 – Apr 2025</span>
+            </div>
+            <div class="role-period">📅 9 months · Chennai</div>
+            <ul class="role-bullets">
+              <li>Gained hands-on experience deploying ML models and collaborating with cross-functional teams across classification, recommendation, and NLP projects.</li>
+            </ul>
+          </div>
+
+        </div>
       </div>
-      <ul class="exp-bullets">
-        <li>Owned and supported end-to-end production ML pipelines across 10+ heterogeneous datasets, ensuring data quality, pipeline stability, and model performance.</li>
-        <li>Designed modular, config-driven Python frameworks to improve maintainability and testing, reducing production issues and enabling faster iteration cycles.</li>
-        <li>Supported deployment and evaluation of fine-tuned LLM models, tracking performance metrics and iterating based on accuracy degradation and user feedback.</li>
-        <li>Monitored model performance metrics (F1, accuracy, drift indicators) and identified root causes for performance drops, leading remediation efforts with stakeholders.</li>
-        <li>Delivered comprehensive documentation for ML pipelines, evaluation logic, and model assumptions to support operational handover and long-term maintenance.</li>
-        <li>Collaborated with global stakeholders to triage data and model issues, define remediation actions, and prioritize fixes.</li>
-      </ul>
+
+      <!-- E-Summit -->
+      <div class="company-block">
+        <div class="company-header">
+          <div class="company-dot">🎓</div>
+          <div>
+            <div class="company-name">E-Summit, IIT Bhubaneswar</div>
+            <div class="company-tenure">2 years 7 months</div>
+          </div>
+        </div>
+        <div class="roles">
+          <div class="role-card">
+            <div class="role-header">
+              <div><div class="role-title">Publicity – Core Head</div></div>
+              <span class="role-badge prev">May 2022 – Mar 2023</span>
+            </div>
+            <div class="role-period">📅 11 months</div>
+          </div>
+          <div class="role-card">
+            <div class="role-header">
+              <div><div class="role-title">Publicity – Core Member</div></div>
+              <span class="role-badge prev">Jun 2021 – May 2022</span>
+            </div>
+            <div class="role-period">📅 1 year</div>
+          </div>
+          <div class="role-card">
+            <div class="role-header">
+              <div><div class="role-title">Publicity – Associate</div></div>
+              <span class="role-badge prev">Sep 2020 – May 2021</span>
+            </div>
+            <div class="role-period">📅 9 months</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="container">
     <div class="section-label">My Work</div>
@@ -321,37 +393,14 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION & ACHIEVEMENTS -->
-<section id="education">
-  <div class="container">
-    <div class="section-label">Background</div>
-    <h2 class="section-title">Education & Achievements</h2>
-    <div class="divider"></div>
-    <div class="edu-grid" style="margin-bottom:2rem">
-      <div class="edu-card">
-        <div class="badge">🎓</div>
-        <h3>B.Tech. in Computer Science & Engineering</h3>
-        <div class="inst">Indian Institute of Technology, Bhubaneswar</div>
-        <div class="meta">Nov 2020 – May 2024 · CGPA: 7.55</div>
-        <p>Relevant coursework: Machine Learning, Algorithms & Data Structures, Database Systems, Probability & Statistics.</p>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:0.75rem;">
-        <div class="achievements">
-          <div class="ach-item">
-            <div class="ach-icon">💻</div>
-            <p><strong>LeetCode Rating 1650</strong> — 400+ problems solved, strong in arrays, trees, DP, graphs, and greedy algorithms.</p>
-          </div>
-          <div class="ach-item">
-            <div class="ach-icon">🏆</div>
-            <p><strong>All India Rank 1932 in JEE Advanced 2020</strong> — Top 0.4% among all candidates nationwide.</p>
-          </div>
-          <div class="ach-item">
-            <div class="ach-icon">⭐</div>
-            <p><strong>99.76 Percentile in JEE Main 2020</strong> — Among 920,000+ candidates across India.</p>
+      <div class="project-card">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#f7f0ea,#f0d9c3)">🧬</div>
+        <div class="project-body">
+          <h3>Clinical Trial NLP Pipeline</h3>
+          <p>Built modular Python pipelines for clinical trial data ingestion, cleaning, and analysis from clinicaltrials.gov. Performed supervised fine-tuning of LLaMA (LoRA-based) for therapeutic area classification from clinical text.</p>
+          <div class="project-highlight">🤖 LoRA fine-tuned LLaMA for domain-specific text classification in Pharma</div>
+          <div class="project-tags">
+            <span class="tag">LLaMA</span><span class="tag">LoRA</span><span class="tag">Hugging Face</span><span class="tag">NLP</span>
           </div>
         </div>
       </div>
@@ -359,7 +408,44 @@
   </div>
 </section>
 
-<!-- CONTACT -->
+<section id="education">
+  <div class="container">
+    <div class="section-label">Background</div>
+    <h2 class="section-title">Education & Achievements</h2>
+    <div class="divider"></div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="badge">🎓</div>
+        <h3>B.Tech. in Computer Science & Engineering</h3>
+        <div class="inst">Indian Institute of Technology, Bhubaneswar</div>
+        <div class="meta">2020 – 2024 · CGPA: 7.55</div>
+        <p>Relevant coursework: Machine Learning, Algorithms & Data Structures, Database Systems, Probability & Statistics.</p>
+      </div>
+      <div class="edu-card">
+        <div class="badge">🏫</div>
+        <h3>MPC (Mathematics, Physics, Chemistry)</h3>
+        <div class="inst">Narayana Institute</div>
+        <div class="meta">May 2018 – September 2020</div>
+        <p>Prepared for and cleared JEE Advanced & JEE Main with exceptional ranks, placing among the top 0.4% nationally.</p>
+      </div>
+    </div>
+    <div class="achievements">
+      <div class="ach-item">
+        <div class="ach-icon">💻</div>
+        <p><strong>LeetCode Rating 1650</strong> — 400+ problems solved, strong in arrays, trees, dynamic programming, graphs, and greedy algorithms.</p>
+      </div>
+      <div class="ach-item">
+        <div class="ach-icon">🏆</div>
+        <p><strong>All India Rank 1932 in JEE Advanced 2020</strong> — Top 0.4% among all candidates nationwide.</p>
+      </div>
+      <div class="ach-item">
+        <div class="ach-icon">⭐</div>
+        <p><strong>99.76 Percentile in JEE Main 2020</strong> — Among 920,000+ candidates across India.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="container">
     <div class="section-label">Get In Touch</div>
@@ -375,21 +461,22 @@
           <a href="tel:+918500637007" class="contact-link">
             <div class="icon">📞</div> +91 8500637007
           </a>
-          <a href="https://linkedin.com" target="_blank" class="contact-link">
-            <div class="icon">💼</div> LinkedIn Profile
+          <a href="https://www.linkedin.com/in/pakala-sreevathsava" target="_blank" class="contact-link">
+            <div class="icon">💼</div> linkedin.com/in/pakala-sreevathsava
           </a>
           <a class="contact-link" style="cursor:default;">
-            <div class="icon">📍</div> Karimnagar, Telangana, India
+            <div class="icon">📍</div> Chennai, Tamil Nadu, India
           </a>
         </div>
       </div>
-      <form onsubmit="handleSubmit(event)">
+      <form name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="form-name" value="contact" />
         <div class="form-row">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
         </div>
-        <input type="text" placeholder="Subject" />
-        <textarea placeholder="Tell me about the opportunity or project..."></textarea>
+        <input type="text" name="subject" placeholder="Subject" />
+        <textarea name="message" placeholder="Tell me about the opportunity or project..."></textarea>
         <button type="submit" class="submit-btn">Send Message →</button>
       </form>
     </div>
@@ -412,7 +499,7 @@
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = 1; e.target.style.transform = 'translateY(0)'; } });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.skill-card, .project-card, .exp-card, .edu-card, .ach-item').forEach(el => {
+  document.querySelectorAll('.skill-card, .project-card, .role-card, .edu-card, .ach-item').forEach(el => {
     el.style.opacity = 0; el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     obs.observe(el);
